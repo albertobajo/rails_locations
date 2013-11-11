@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 20131111172057) do
   end
 
   add_index "states", ["country_id"], name: "index_states_on_country_id"
-  add_index "states", ["name"], name: "index_states_on_name", unique: true
-  add_index "states", ["slug"], name: "index_states_on_slug", unique: true
+  add_index "states", ["name"], name: "index_states_on_name"
+  add_index "states", ["slug"], name: "index_states_on_slug"
 
 end

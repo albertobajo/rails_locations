@@ -18,4 +18,10 @@ class Country < ActiveRecord::Base
       end
     end
   end
+  
+  # methods
+  
+  def to_s
+    "country-#{slug}"
+  end
 end

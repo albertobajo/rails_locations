@@ -7,7 +7,7 @@ class CreateStates < ActiveRecord::Migration
 
       t.timestamps
     end
-    add_index :states, :name, unique: true
-    add_index :states, :slug, unique: true
+    add_index :states, :name
+    add_index :states, :slug
   end
 end
