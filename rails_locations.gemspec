@@ -5,7 +5,7 @@ require "rails_locations/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name        = "rails_locations"
+  s.name        = "rails-locations"
   s.version     = RailsLocations::VERSION
   s.authors     = ["TODO: Your name"]
   s.email       = ["TODO: Your email"]
