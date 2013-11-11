@@ -1,14 +1,15 @@
-class Country < ActiveRecord::Base
+class State < ActiveRecord::Base
   # friendly_id
   extend FriendlyId
   friendly_id :name, use: :slugged
   
   # associations
-  has_many :states
+  belongs_to :country
   
   # validations
   validates :name, presence: true, uniqueness: true
   validates :slug, presence: true, uniqueness: true
+  validates :country, presence: true
   
   # rails_admin
   if defined? rails_admin
@@ -18,4 +19,5 @@ class Country < ActiveRecord::Base
       end
     end
   end
+  
 end
