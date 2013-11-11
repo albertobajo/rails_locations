@@ -7,6 +7,9 @@ require "action_mailer/railtie"
 require "sprockets/railtie"
 # require "rails/test_unit/railtie"
 
+require "devise"
+require "rails_admin"
+
 Bundler.require(*Rails.groups)
 require "rails_locations"
 
