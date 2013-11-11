@@ -1,15 +1,15 @@
-class State < ActiveRecord::Base
+class Province < ActiveRecord::Base  
   # friendly_id
   extend FriendlyId
   friendly_id :slug_candidates, use: :slugged
   
   # associations
-  belongs_to :country
+  belongs_to :state
   
   # validations
-  validates :name, presence: true, uniqueness: { scope: :country }
-  validates :slug, presence: true, uniqueness: { scope: :country }
-  validates :country, presence: true
+  validates :name, presence: true, uniqueness: { scope: :state }
+  validates :slug, presence: true, uniqueness: { scope: :state }
+  validates :state, presence: true
   
   # rails_admin
   if defined? rails_admin
@@ -33,7 +33,7 @@ class State < ActiveRecord::Base
   def slug_candidates
     [
       :name,
-      [:name, :country],
+      [:name, :state],
     ]
   end
   
