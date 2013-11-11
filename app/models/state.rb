@@ -5,6 +5,7 @@ class State < ActiveRecord::Base
   
   # associations
   belongs_to :country
+  has_many :provinces
   
   # validations
   validates :name, presence: true, uniqueness: { scope: :country }
