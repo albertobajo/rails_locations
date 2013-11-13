@@ -6,6 +6,7 @@ class State < ActiveRecord::Base
   # associations
   belongs_to :country
   has_many :provinces, dependent: :destroy
+  has_many :cities, dependent: :destroy
   
   # validations
   validates :name, presence: true, uniqueness: { scope: :country }

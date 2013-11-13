@@ -5,6 +5,7 @@ require 'rspec/rails'
 require 'rspec/autorun'
 
 require "factory_girl_rails"
+require "faker"
 require "friendly_id"
 require 'shoulda/matchers'
 
