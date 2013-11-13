@@ -16,6 +16,7 @@ class State < ActiveRecord::Base
   # rails_admin
   if defined? rails_admin
     rails_admin do
+      navigation_label 'Rails Locations'
       create do
         exclude_fields :slug
       end
