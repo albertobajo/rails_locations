@@ -4,7 +4,7 @@ class Country < ActiveRecord::Base
   friendly_id :name, use: :slugged
   
   # associations
-  has_many :states
+  has_many :states, dependent: :destroy
   
   # validations
   validates :name, presence: true, uniqueness: true
@@ -19,9 +19,4 @@ class Country < ActiveRecord::Base
     end
   end
   
-  # methods
-  
-  def to_s
-    "country-#{slug}"
-  end
 end

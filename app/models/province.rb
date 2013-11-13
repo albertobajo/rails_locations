@@ -1,7 +1,7 @@
 class Province < ActiveRecord::Base  
   # friendly_id
   extend FriendlyId
-  friendly_id :slug_candidates, use: :slugged
+  friendly_id :name, use: :scoped, scope: :state
   
   # associations
   belongs_to :state
@@ -19,22 +19,5 @@ class Province < ActiveRecord::Base
       end
     end
   end
-  
-  # methods
-  
-  def to_s
-    "state-#{slug}"
-  end
-  
-  protected
-  
-  # Try building a slug based on the following fields in
-  # increasing order of specificity.
-  def slug_candidates
-    [
-      :name,
-      [:name, :state],
-    ]
-  end
-  
+    
 end
