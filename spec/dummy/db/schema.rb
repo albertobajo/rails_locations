@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131111173931) do
+ActiveRecord::Schema.define(version: 20131113122718) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -30,6 +30,22 @@ ActiveRecord::Schema.define(version: 20131111173931) do
 
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+
+  create_table "cities", force: true do |t|
+    t.string   "name"
+    t.string   "slug"
+    t.string   "type"
+    t.integer  "province_id"
+    t.integer  "state_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "cities", ["name"], name: "index_cities_on_name"
+  add_index "cities", ["province_id"], name: "index_cities_on_province_id"
+  add_index "cities", ["slug"], name: "index_cities_on_slug"
+  add_index "cities", ["state_id"], name: "index_cities_on_state_id"
+  add_index "cities", ["type"], name: "index_cities_on_type"
 
   create_table "countries", force: true do |t|
     t.string   "name"

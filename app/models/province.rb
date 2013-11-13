@@ -5,6 +5,7 @@ class Province < ActiveRecord::Base
   
   # associations
   belongs_to :state
+  has_many :cities, dependent: :destroy
   
   # validations
   validates :name, presence: true, uniqueness: { scope: :state }
