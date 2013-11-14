@@ -4,9 +4,10 @@ class City < ActiveRecord::Base
   friendly_id :name, use: :scoped, scope: [:state, :province]
   
   # associations
-  has_many :postcodes, dependent: :destroy
   belongs_to :province
   belongs_to :state
+  has_many :postcodes, dependent: :destroy
+  has_many :locations, dependent: :destroy
   
   # validations
   validates :name, presence: true, uniqueness: { scope: [:state, :province] }

@@ -16,4 +16,10 @@ province_3  = Province.create(name: "Gipuzkoa", state: state_1)
 province_4  = Province.create(name: "Lleida", state: state_2)
 
 # cities
-city_1      = City.create(name: "Bilbao", state: state_1, province: province_2)
+es_city_1      = EsCity.create(name: "Bilbao", state: state_1, province: province_2)
+
+# postcodes
+postcode_1  = Postcode.create(number: "48005", city: es_city_1)
+
+# locations
+location_1 = Location.create(street: "Gran Vía", number: "1A", postcode: postcode_1, city: es_city_1)

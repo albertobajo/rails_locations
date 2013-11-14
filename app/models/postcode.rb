@@ -1,6 +1,7 @@
 class Postcode < ActiveRecord::Base
   # associations
   belongs_to :city
+  has_many :locations
   
   # validations
   validates :number, presence: true, uniqueness: { scope: :city }
