@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131113122718) do
+ActiveRecord::Schema.define(version: 20131114162009) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -56,6 +56,16 @@ ActiveRecord::Schema.define(version: 20131113122718) do
 
   add_index "countries", ["name"], name: "index_countries_on_name", unique: true
   add_index "countries", ["slug"], name: "index_countries_on_slug", unique: true
+
+  create_table "postcodes", force: true do |t|
+    t.string   "number"
+    t.integer  "city_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "postcodes", ["city_id"], name: "index_postcodes_on_city_id"
+  add_index "postcodes", ["number"], name: "index_postcodes_on_number"
 
   create_table "provinces", force: true do |t|
     t.string   "name"
