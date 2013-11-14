@@ -21,3 +21,8 @@
 
 en:
   hello: "Hello world"
+  activerecord:
+      models:
+        es_city: 
+          one: ES City
+          other: ES Cities
